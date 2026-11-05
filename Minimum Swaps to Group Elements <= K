@@ -1,0 +1,44 @@
+class Solution:
+    def minSwap(self, arr, k): 
+        # Code Here
+        count = 0
+        for ele in arr:
+            if ele <= k:
+                count+=1
+            
+        swaps = 0
+        for i in range(0, count):
+            if arr[i]>k:
+                swaps+=1
+        
+        min_swap = swaps
+        
+        i = 1
+        j = i + count - 1
+        
+        while j < len(arr):
+            
+            if arr[i-1] > k:
+                swaps-=1
+            if arr[j] > k:
+                swaps+=1
+                
+            min_swap = min(min_swap, swaps)
+            
+            i+=1
+            j+=1
+            
+        return min_swap
+                
+            
+                
+            
+        
+        
+        
+        
+        
+                
+
+    
+
